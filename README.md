@@ -1,70 +1,259 @@
-# Getting Started with Create React App
+# 📚 COMPSA Library Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern frontend Library Management System built with **React.js**, made for Computer Science students and librarians (admins).  
+This version is frontend-only and uses browser `localStorage` for persistence so you can run and test the full app without a backend. Backend integration (Spring Boot + MySQL) is planned.
 
-## Available Scripts
+> ⚠️ Backend integration is planned but not required. You can deploy the frontend easily on Vercel and test end-to-end flows locally.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 👨‍🎓 Student
+- Signup / Login system
+- Browse available books
+- Request book: **Issue**, **Reserve**, or **Renewal**
+- Manage **My Borrowed Books**, **Reserved Books**, and **Notes**
+- Auto-updating dashboard (no manual refresh required)
+- Responsive UI with due-date countdowns
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 👩‍🏫 Admin (Librarian)
+- Dedicated admin login page
+- Manage library books (Add / Edit / Delete)
+- View and approve/deny student requests
+- Monitor registered student accounts
+- Real-time updates reflected in student dashboards
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🗂️ Project Structure
 
-### `npm run build`
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── BookCard.jsx
+│   └── BookDetail.jsx
+├── pages/
+│   ├── Login.jsx
+│   ├── Signup.jsx
+│   ├── Dashboard.jsx
+│   ├── Books.jsx
+│   ├── AdminLogin.jsx
+│   └── AdminDashboard.jsx
+├── utils/
+│   ├── auth.js
+│   ├── Storage.js
+│   └── libraryService.js
+├── data/
+│   ├── StudentsData.js
+│   └── BooksData.js
+├── hooks/
+│   └── useLocalStorageSync.js
+└── styles/
+    ├── Books.css
+    ├── Dashboard.css
+    ├── Navbar.css
+    ├── login.css
+    └── AdminDashboard.css
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧩 Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js (LTS) — recommended ≥ 16
+- npm (bundled with Node.js)
+- (Optional) GitHub account — for deployment via Vercel
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠️ Installation & Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1) Clone the repository
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+⚠️ Avoid spaces in your project folder name.  
+Good: `library-management` ✅ — Bad: `Library Management` ❌
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2) Install dependencies
+```bash
+npm install
+```
 
-## Learn More
+3) Run locally (development)
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Then open your browser: http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## ☁️ Deploy to Vercel (quick)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Push your repo to GitHub.
+- Log in to Vercel → New Project → Import from GitHub.
+- Accept defaults (Framework: React) → Deploy.
+- Your app will be live at: `https://your-project-name.vercel.app`
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🧭 Application Routes & Pages
 
-### Making a Progressive Web App
+| Route | Description | Access |
+|---|---:|---|
+| / | Student login page | Public |
+| /signup | Student signup | Public |
+| /dashboard | Student dashboard | Private |
+| /books | Browse & actions for students | Private |
+| /admin | Admin login page | Public |
+| /admin/dashboard | Admin control panel | Private |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 👤 Default Accounts & Test Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+On first run the app seeds `localStorage` with sample users and books.
 
-### Deployment
+Admin:
+- Email: `admin@compsa.edu`
+- Password: `admin123`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Sample Students:
+| Name | Email | Password |
+|---|---|---:|
+| Alok Waigaonkar | alok@compsa.edu | 12345 |
+| Sanika Patil | sanika@compsa.edu | 54321 |
+| Rohan Deshmukh | rohan@compsa.edu | 11111 |
+| Sneha Joshi | sneha@compsa.edu | 22222 |
+| Aarav Kulkarni | aarav@compsa.edu | 33333 |
+| Meera Bhosale | meera@compsa.edu | 44444 |
+| Pranav Kale | pranav@compsa.edu | 55555 |
 
-### `npm run build` fails to minify
+Books:
+- 20 sample books are auto-added on first run (see `src/data/BooksData.js`).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 💾 Data Storage & Reset
+
+All data is stored in the browser's `localStorage`. Important keys:
+
+| Key | Description |
+|---|---|
+| `Students` | List of registered student accounts |
+| `Books` | All books and their statuses |
+| `Admins` | Admin account list |
+| `currentUser` | Currently logged-in user |
+| `<email>_notes` | Notes saved by each student (per email) |
+
+To reset data:
+1. Open DevTools → Application → Local Storage.
+2. Delete keys: `Students`, `Books`, `Admins`, `currentUser`.
+3. Refresh — default seed data will be reloaded.
+
+---
+
+## 🧠 How It Works
+
+Student flow:
+1. Login or Signup.
+2. Visit `/books`:
+   - Available books → Request Issue.
+   - Issued by someone else → Request Reserve.
+   - Issued to you → Request Renewal.
+3. Requests are submitted as "Pending".
+4. Admin approves/denies. Student dashboard updates automatically.
+
+Admin flow:
+1. Login at `/admin`.
+2. Visit `/admin/dashboard`:
+   - Add / Delete books.
+   - Review pending requests (Issue / Reserve / Renew).
+   - Approve or Deny requests.
+   - View all student accounts.
+3. Actions take effect immediately and are reflected for students.
+
+---
+
+## 🧭 Quick Usage Guide
+
+For Students:
+- Open: http://localhost:3000
+- Signup / Login (use sample credentials or create an account)
+- Browse: `/books`
+- Click “Request Issue” / “Request Reserve” / “Request Renewal”
+- Check dashboard `/dashboard` for Borrowed & Reserved Books and Notes
+
+For Admins:
+- Admin login: http://localhost:3000/admin
+- Credentials: `admin@compsa.edu` / `admin123`
+- Manage library and requests at `/admin/dashboard`
+
+---
+
+## 🔍 View Login Credentials in Local Storage
+
+Open your app → DevTools (F12) → Application → Local Storage → `http://localhost:3000`.  
+Select the `Students` key to view JSON like:
+
+```json
+[
+  {
+    "firstName": "Alok",
+    "lastName": "Waigaonkar",
+    "email": "alok@compsa.edu",
+    "password": "12345",
+    "role": "STUDENT"
+  },
+  {
+    "firstName": "Sanika",
+    "lastName": "Patil",
+    "email": "sanika@compsa.edu",
+    "password": "54321",
+    "role": "STUDENT"
+  }
+]
+```
+
+You may edit or delete these entries to simulate user changes or reset state.
+
+---
+
+## 🧩 Limitations & Next Steps
+
+Current limitations:
+- Frontend-only, uses browser `localStorage`.
+- No real authentication or server-side validation.
+
+Planned next steps:
+- Backend (Spring Boot + MySQL)
+- JWT authentication
+- Persistent user/book storage
+- Search, filters, and pagination for books
+- Admin analytics dashboard
+- File upload for book covers
+
+---
+
+## ✅ Add this README to your repo
+
+1. Create `README.md` in your project root.
+2. Paste this content and save.
+3. Commit & push:
+
+```bash
+git add README.md
+git commit -m "Add project README"
+git push origin main
+```
+
+---
+
+## 🎉 Thank you
+
+Thanks for using COMPSA Library — a simple, modular frontend library system ready for full-stack integration. If you'd like, I can:
+- Generate this README file directly in your repo (provide repo access), or
+- Convert sections into badges, docs, or a CONTRIBUTING guide next.
