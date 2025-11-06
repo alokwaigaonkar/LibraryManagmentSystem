@@ -1,0 +1,94 @@
+.books-page {
+    padding-top: 90px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    color: #2c3e50;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  .page-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+  
+  .books-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 40px 40px;
+  }
+  
+  /* Book card */
+  .book-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    width: 280px;
+    transition: transform 0.2s ease;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .status {
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 4px;
+  }
+  
+  .status.available {
+    color: #27ae60;
+  }
+  
+  .status.issued {
+    color: #e67e22;
+  }
+  
+  .status.reserved {
+    color: #c0392b;
+  }
+  
+  /* Buttons */
+  .action-btn {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .action-btn.issue {
+    background-color: #27ae60;
+  }
+  
+  .action-btn.renew {
+    background-color: #3498db;
+  }
+  
+  .action-btn.reserve {
+    background-color: #e67e22;
+  }
+  
+  .action-btn:hover {
+    opacity: 0.9;
+
+  }
+  .status-badge.pending {
+    background-color: #f39c12; /* goldish yellow */
+  }
+
+.pending-note {
+  font-size: 13px;
+  color: #e67e22;
+  margin-top: 4px;
+}
+  
+  

@@ -1,0 +1,120 @@
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0f7fa, #F9F9F9);
+  }
+  
+  
+  .login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+ 
+  .login-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 40px 30px;
+    max-width: 400px;          /* Controls card width */
+    transition: all 0.3s ease;
+  }
+  
+  .login-card:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+  
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  
+  .login-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 30px;
+  }
+  
+  
+  .input-sec{
+    width: 100%;
+    max-width: 280px;
+  border: 1px solid #ccddee;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  }
+  
+  .input-sec:focus {
+    outline: none;
+    border-color: #00acc1;
+    box-shadow: 0 0 0 3px rgba(0, 172, 193, 0.2);
+  }
+  
+
+  .submit-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #e38440; 
+    color: white;
+    border: none;
+    font-weight: 500;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #e3711f;
+    cursor: pointer;
+  }
+  .error-box {
+    color: red;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .success-box {
+    color: green;
+    background-color: #e6ffe6;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .shake {
+    animation: shake 0.3s;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }

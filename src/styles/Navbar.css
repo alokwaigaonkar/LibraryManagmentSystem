@@ -1,0 +1,115 @@
+.navbar {
+    background: linear-gradient(90deg, #2E2E2E, #1c1c1c);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 64px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  /* Left */
+  .navbar-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  /* Center */
+  .navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ecf0f1;
+  }
+  
+  /* Right */
+  .navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  /* Buttons (Sign Up / Log In) */
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button {
+    background-color: #e38440;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  
+  .button:hover {
+    background-color: #e3711f;
+  }
+  
+  /* User icon and dropdown */
+  .user-icon {
+    background-color: #9b59b6;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 65px;
+    right: 24px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 10px;
+  }
+  
+  .dropdown button {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .dropdown button:hover {
+    background-color: #f1f1f1;
+  }
+  
